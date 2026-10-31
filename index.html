@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex,nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>My Forum Week</title>
+<link href="https://fonts.googleapis.com/css2?family=Varela+Round&family=Varela&display=swap" rel="stylesheet">
+<style>
+:root{--red:#cd5c5c;--redd:#b94a4a;--bg:#fafafa;--ink:#4a4a4a;--sub:#6b6b6b;--dot:#f1b9b9;--foot:#f0f0f0;--card:#fff;--hl:#fdecec;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--red:#e07070;--redd:#e88a8a;--bg:#1d1b1b;--ink:#e8e4e4;--sub:#aaa4a4;--dot:#5a3434;--foot:#262323;--card:#262323;--hl:#3a2626}}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 "Varela",system-ui,sans-serif}
+header{background:#cd5c5c;color:#fff;padding:34px 24px 26px;position:relative}
+header h1{margin:0;font:400 clamp(30px,7vw,46px)/1.1 "Varela Round",system-ui,sans-serif}
+header p{margin:6px 0 0;opacity:.9}
+nav{display:flex;gap:8px;overflow-x:auto;padding:14px 24px;background:#cd5c5c;position:sticky;top:0;z-index:5;border-top:1px solid rgba(255,255,255,.2)}
+nav button{flex:none;border:1px solid #fff;background:transparent;color:#fff;border-radius:20px;padding:6px 14px;font:inherit;cursor:pointer}
+nav button[aria-selected="true"]{background:#fff;color:#b94a4a}
+nav button:focus-visible,.dot:focus-visible{outline:3px solid #ffd27a;outline-offset:2px}
+.notch{height:0;position:relative}
+.notch:after{content:"";position:absolute;left:34px;top:-1px;border:14px solid transparent;border-bottom-color:var(--bg);border-top:0;transform:translateY(-100%)}
+main{max-width:820px;margin:0 auto;padding:10px 20px 40px}
+h2{font:400 28px "Varela Round",system-ui,sans-serif;color:var(--red);margin:26px 0 4px}
+.sub{color:var(--sub);margin:0 0 14px}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;margin:12px 0 8px}
+.facts div{background:var(--card);border:1px solid var(--dot);border-radius:12px;padding:8px 12px}
+.facts b{display:block;color:var(--red);font-weight:400;font-size:13px}
+.prog{color:var(--red);font-size:13px;margin:10px 0 0}
+.tl{list-style:none;margin:10px 0 0;padding:0}
+.it{display:grid;grid-template-columns:62px 22px 1fr;gap:0 12px;position:relative;padding:18px 0;border-bottom:3px dotted var(--dot)}
+.it:last-child{border-bottom:0}
+.t{color:var(--red);text-align:right;line-height:1.2;font-size:14px;padding-top:2px}
+.rail{position:relative;display:flex;justify-content:center}
+.rail:before{content:"";position:absolute;top:-18px;bottom:-18px;width:2px;background:var(--red)}
+.it:first-child .rail:before{top:10px}
+.it:last-child .rail:before{bottom:calc(100% - 10px)}
+.dot{position:relative;z-index:1;width:20px;height:20px;border-radius:50%;border:5px solid var(--red);background:#fff;padding:0;cursor:pointer;color:#fff;font-size:11px;line-height:10px}
+.done .dot{background:var(--red)}
+.done .dot:after{content:"\2713"}
+.done h3,.done .nt{opacity:.5;text-decoration:line-through}
+h3{margin:0;font:700 17px/1.3 "Varela",system-ui,sans-serif;color:var(--ink)}
+.pill{float:right;margin-left:8px;border:1px solid var(--red);color:var(--red);border-radius:16px;padding:1px 12px;font-size:13px;background:var(--card)}
+.ln{color:var(--sub);margin:2px 0 0}
+.nt{display:grid;grid-template-columns:54px 1fr;gap:8px;margin-top:8px;font-size:14px}
+.nt i{font-style:italic;color:var(--sub)}
+.me{background:var(--hl);margin:0 -12px;padding-left:12px;padding-right:12px;border-radius:12px}
+.qr{display:block;width:210px;max-width:100%;background:#fff;padding:8px;border-radius:10px;margin-top:10px;border:1px solid var(--dot)}
+.arrow{color:var(--red);text-align:center;margin:6px 0;font-size:13px}
+a{color:var(--redd)}
+.rd{margin-top:8px;border-left:3px solid var(--red);padding:4px 10px;font-size:14px;display:flex;flex-direction:column;gap:3px;word-break:break-word}.rd b{color:var(--red);font-weight:400;font-size:13px}.rd span{color:var(--sub)}
+footer{background:var(--foot);color:var(--sub);display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;padding:22px 24px;font-size:13px}
+@media (max-width:520px){.it{grid-template-columns:48px 20px 1fr;gap:0 8px}.pill{float:none;display:inline-block;margin:0 0 4px}}
+@media print{nav{display:none}}
+</style>
+</head>
+<body>
+<header><h1>My Forum Week</h1><p>Lyra Ashley U. Embalsado · 2026 ASEAN ICT Forum on Child Online Protection</p></header>
+<nav id="tabs" role="tablist"></nav>
+<div class="notch"></div>
+<main id="app"></main>
+<footer><span>Lyra Ashley U. Embalsado</span><span>Grand Hyatt Manila, BGC, Taguig</span><span>Tap a dot to tick it off</span></footer>
+<script>
+var QR="";
+var D=[
+{id:"check",tab:"Checklist",h:"Prepare Checklist",s:"Everything to prepare, apart from the program. Tap a dot when done.",
+ facts:[["Before","Sun 1 and Mon 2 Nov"],["Each morning","ID, name tag, water, jacket, talking points"]],
+ it:[
+ ["Docs","","Valid ID","Passport if you are from outside the Philippines; any valid ID if from the Philippines. Needed every day."],
+ ["Docs","","Dinner QR code","Saved and screenshotted. It is on the Tue 3 Nov tab."],
+ ["Docs","","Medicines and prescription","Bring your medicines with the doctor’s prescription."],
+ ["Docs","","Offline copies","Agenda, session plan, Prep Day guide and talking points saved on your phone, plus a paper copy of your talking points."],
+ ["Pack","","Prep Day outfit","Comfy clothes and a jacket. The rooms are cold."],
+ ["Pack","","Dinner outfit","Business Casual or Traditional Attire."],
+ ["Pack","","Forum outfits for Wed and Thu","Dress code is not stated, so confirm it. Business casual is a safe choice."],
+ ["Pack","","Water bottle, prayer items, notebook and pen"],
+ ["Pack","","Phone charger and power bank"],
+ ["Do","","Confirm with your team","Behind the Feed room, breakout rooms for Rounds 1, 3 and 4, your Day 1 Youth Spotlight role, Forum dress code, and travel and check-in (Jasmin Rabe)."],
+ ["Do","","Save key contacts in your phone","Janice Tapil, Jasmin Rabe and the Child Safeguarding Team. They are on the Help tab."],
+ ["Do","","Know who your adult mentor is","You go out with them, never alone."],
+ ["Do","","Photo consent","You can change it anytime. Tell your mentor or the Child Safeguarding Team."],
+ ["Practice","","Time your youth segment","7 minutes or less.","","me"],
+ ["Practice","","Time your one-step answer","3 minutes or less.","","me"],
+ ["Read","","Reading list","Each item also shows under the session where you need it, in a Read for this box. The full list is on the Read tab."],
+ ["Mon night","","Sleep early","Prep Day starts at 8:30 AM."],
+ ["Nov 7","","Confirm your role and call time for the MaPa workshop","VALACE Training Hall 5A & 5B, Valenzuela City, 8:00 AM – 5:00 PM. Ask Jennel C. Reyes (jreyes@ateneo.edu) or your DigiChamps lead."],
+ ["Nov 7","","Review the Photovoice prompts and child-sensitive rules","Focus on protective factors and help-seeking. Use symbolic visuals, nothing identifiable."],
+ ["Nov 9","","Confirm the research defense","Time, venue and panel. Slides are on Canva and saved offline.","","me"],
+ ["Nov 9","","Rehearse the defense out loud","With a timer.","","me"],
+ ["Each day","","Morning check","ID, name tag, water bottle, jacket, talking points, charged phone."]
+ ]},
+{id:"prep",tab:"1–2 Nov",h:"Get Ready",s:"Sunday 1 and Monday 2 November 2026 · Home",
+ facts:[["Where","Home (confirm travel and check-in with Jasmin Rabe)"],["Goal","Talking points ready, bag packed, early sleep"]],
+ it:[
+ ["Sun","1 Nov","Read the Behind the Feed session plan","Your part is the Youth perspective (up to 7 min).","What do adults and policymakers miss about how commercial content, influencers and platforms shape young people’s online lives? What do you most want changed?","","","","",[["Session Plan: Behind the Feed (file attached in chat)",""]]],
+ ["Sun","1 Nov","Draft and time your talking points","Say them out loud with a timer. Keep them under 7 minutes.","Keep a paper copy and a phone copy.","","","","",[["Philippines: DOLE Labor Advisory 12, Series of 2026","https://www.sunstar.com.ph/pampanga/local-news/dole-issues-guidelines-on-children-in-entertainment-under-15-years"],["Malaysia: Content Forum influencer guidelines","https://www.thestar.com.my/news/nation/2026/09/02/new-guidelines-for-influencers-to-cover-ai-generated-content-child-exploitation-and-fake-claims-says-content-forum"],["5Rights: children’s rights online in Southeast Asia","https://5rightsfoundation.com/from-indonesia-to-asean-building-momentum-for-childrens-rights-online-in-southeast-asia"]]],
+ ["Sun","1 Nov","Prepare your “one practical step” answer","Up to 3 minutes.","If ASEAN Member States took one practical step to protect children in this area during the new RPA (2026–2030), what should it be?","","","","",[["ASEAN RPA on COEA (2021–2025, the plan being extended)","https://asean.org/wp-content/uploads/2021/11/4.-ASEAN-RPA-on-COEA_Final.pdf"],["5Rights: renewed RPA and safety-by-design","https://5rightsfoundation.com/from-indonesia-to-asean-building-momentum-for-childrens-rights-online-in-southeast-asia"]]],
+ ["Sun","1 Nov","Read the Canva consultation slides","For tomorrow’s Youth Spotlight Workshop.","Does it sound like what children said? What is missing? Best and worst of growing up online? One thing to tell governments, tech companies, families, communities?","","","","https://www.canva.com/design/DAHZaOZsLZg/bLI_19DYhtGPEIADng6xLg/edit"],
+ ["Mon","2 Nov","Pack your bag","Valid ID (passport if from outside the Philippines), water bottle, medicines with prescription, prayer items, jacket (rooms are cold), charger and power bank, talking points.","Outfits: comfy clothes for Prep Day, Business Casual or Traditional Attire for the dinner, Forum outfits for Wed and Thu."],
+ ["Mon","2 Nov","Save your dinner QR code","Screenshot it so it opens without signal.","It is on the 3 Nov page."],
+ ["Mon","2 Nov","Sleep early","Prep Day starts 8:30 AM sharp."]
+ ]},
+{id:"d3",tab:"Tue 3 Nov",h:"Prep Day and Welcome Dinner",s:"Tuesday, 3 November 2026",
+ facts:[["Prep Day","8:30 AM – 5:00 PM · Grand Salon, 5th floor"],["Welcome Dinner","6:00 PM · Grand Ballroom III"],["Venue","Grand Hyatt Manila, 8th Ave corner 35th St, BGC, Taguig"],["Dress","Comfy clothes and a jacket by day · Business Casual or Traditional Attire at dinner"]],
+ it:[
+ ["8:15","AM","Arrive early","Suggested. Find the Grand Salon, 5th floor.","Bring your ID."],
+ ["8:30","AM","Arrive and register","Sign in, get your name tag, find your spot."],
+ ["9:00","AM","Welcome and vibe check","Message from Patricia Lim-Ah Ken (UNICEF Philippines), then an activity to meet the squad and support team."],
+ ["9:30","AM","Staying safe together","Code of Conduct, photo and social media rules, how to raise a worry, who can help.","You can change your photo consent anytime. Tell your adult mentor or the Child Safeguarding Team.","","","","",[["YRSC Prep Day Program and Guide, safety section (file attached in chat)",""]]],
+ ["10:00","AM","Youth Spotlight Workshop","Check if the findings capture what young people shared. Then discuss good things and risks of growing up online, and what governments, tech companies, families and communities should do.","Some Philippine Survivor Network members will join to support you.","","","","",[["Growing Up Online slides (Canva)","https://www.canva.com/design/DAHZaOZsLZg/bLI_19DYhtGPEIADng6xLg/edit"]]],
+ ["11:00","AM","Health break (15 min)","Spotlight continues at 11:15."],
+ ["12:00","NN","Lunch","Eat, rest, recharge."],
+ ["1:30","PM","Your team, house rules and session leads","Part 1: house rules and meet the CRC Asia staff. Part 2: small groups with session leads.","Ask Josie’s team about timing cues and your focal person for Behind the Feed. Some SLs have separate alignment meetings with YRSC.","","","","",[["Session Plan: Behind the Feed (file attached in chat)",""],["YRSC Prep Day Program and Guide (file attached in chat)",""]]],
+ ["3:00","PM","Health break (15 min)"],
+ ["3:15","PM","Rehearsal on stage","Run through your 7-minute and 3-minute parts.","Practice with the mic and ask for a timing cue.","me","Your part","","",[["Session Plan: your running order (file attached in chat)",""]]],
+ ["4:50","PM","Getting-ready briefing","You get your Forum Day schedule, focal persons and safety reminders."],
+ ["5:00","PM","Closing and feedback","Say what hit, what didn’t and what you still need."],
+ ["5:00","PM","Freshen up and change","Suggested, until about 5:40. Drink water and have a snack."],
+ ["5:45","PM","Head to Grand Ballroom III","Go with your adult mentor, never alone.","Have the QR code open on your phone."],
+ ["6:00","PM","5th ASEAN ICT Forum Welcome Dinner","Grand Ballroom III · Business Casual or Traditional Attire","By invitation only and non-transferable. Photographers will be present: ask the Secretariat at the entrance for a sticker if you prefer not to be photographed. Hotel parking has fees. If your plans change, email mkassalalima@ncc-osaec-csaem.gov.ph.","","Dinner","qr"]
+ ]},
+{id:"d4",tab:"Wed 4 Nov",h:"Forum Day 1",s:"Wednesday, 4 November 2026 · The Changing Landscape: From Evidence to Response",
+ facts:[["Venue","Grand Hyatt Manila, Grand Ballroom (Level 3)"],["Your session","3:45 – 5:05 PM · Behind the Feed"],["Room","Ballroom 1 and 2 per session plan; agenda says Breakout Round 2, Room 1. Confirm."],["Dress","Not stated. Business casual suggested. Confirm."]],
+ it:[
+ ["8:00","AM","Registration","Arrive by 8:00 with ID and name tag."],
+ ["9:00","AM","Opening Ceremony and Preliminaries"],
+ ["10:00","AM","Setting the Scene","Objectives of the 2026 ASEAN ICT Forum."],
+ ["10:10","AM","Youth Spotlight: Growing Up Digital","Youth perspective on risks, rights and what young people want.","Check your Forum Day schedule for any role.","","","","",[["Growing Up Online slides (Canva)","https://www.canva.com/design/DAHZaOZsLZg/bLI_19DYhtGPEIADng6xLg/edit"]]],
+ ["10:25","AM","Launch of ASEAN’s Extended Regional Plan of Action","Video on the first RPA and the Extended RPA.","","","","","",[["ASEAN RPA on COEA (2021–2025, the plan being extended)","https://asean.org/wp-content/uploads/2021/11/4.-ASEAN-RPA-on-COEA_Final.pdf"],["5Rights: renewed RPA and safety-by-design","https://5rightsfoundation.com/from-indonesia-to-asean-building-momentum-for-childrens-rights-online-in-southeast-asia"]]],
+ ["10:40","AM","Coffee and tea break"],
+ ["10:55","AM","Plenary 1: The Changing Face of Online Harm","Sessions 1a to 1c and moderated discussion, until 12:20 PM."],
+ ["12:20","PM","Lunch","Eat and rest your voice."],
+ ["1:20","PM","Priority Pulse and Survivor Spotlight","Priority Pulse 1:20, Survivor Spotlight 1:30."],
+ ["1:45","PM","Breakout instructions and transition"],
+ ["2:05","PM","Breakout Round 1 (until 3:25)","Room 1 AI safety by design, Room 2 survivor-led networks, Room 3 violent online networks, Room 4 digital resilience.","Your assigned room: confirm."],
+ ["3:25","PM","Coffee and tea break","Head to your session room by 3:35 for the sound check and to meet your focal person."],
+ ["3:45","PM","Behind the Feed starts","Arrivals and seating, then the “What’s behind the feed?” quiz poll at 3:50 and UNICEF framing at 3:55.","Facilitator: Josianne Galea Baron (UNICEF). Panel: Mediha Mahmood, Dr. Francis Rees (online), Atty. Jerommel A. Gabriel, Marie-Ève Nadeau and you.","me","Your session","","",[["Session Plan: Behind the Feed (file attached in chat)",""]]],
+ ["4:00","PM","Move to the stage","Panelists join. Listen to Dr. Rees (evidence), Malaysia, the Philippines, then 5Rights.","Take notes on points to build on.","","","","",[["Philippines: DOLE Labor Advisory 12, Series of 2026 (Atty. Gabriel)","https://www.sunstar.com.ph/pampanga/local-news/dole-issues-guidelines-on-children-in-entertainment-under-15-years"],["Malaysia: Content Forum influencer guidelines (Mediha Mahmood)","https://www.thestar.com.my/news/nation/2026/09/02/new-guidelines-for-influencers-to-cover-ai-generated-content-child-exploitation-and-fake-claims-says-content-forum"],["5Rights: renewed RPA and safety-by-design (Marie-Ève Nadeau)","https://5rightsfoundation.com/from-indonesia-to-asean-building-momentum-for-childrens-rights-online-in-southeast-asia"]]],
+ ["4:24","PM","YOUR TURN: Youth perspective","Up to 7 minutes, ending about 4:31.","Ask for a timing cue. Water before you go.","me","You speak","","",[["Growing Up Online slides (Canva): what children said","https://www.canva.com/design/DAHZaOZsLZg/bLI_19DYhtGPEIADng6xLg/edit"],["Session Plan: your guiding question (file attached in chat)",""]]],
+ ["4:31","PM","Setting priorities for action","One practical step for ASEAN. Up to 3 minutes each.","Say your one step in one clear sentence first.","me","You speak"],
+ ["4:45","PM","Audience Q&A","Questions come in groups of 4 or 5 for the whole panel. Add to an answer if you want to."],
+ ["5:00","PM","Close, then return to plenary","Session closes 5:05. Plenary 5:05–5:15, Day 1 processing and admin 5:15–5:30.","Debrief with your adult mentor. Networking after 5:30."]
+ ]},
+{id:"d5",tab:"Thu 5 Nov",h:"Forum Day 2",s:"Thursday, 5 November 2026 · From Collective Responsibility to Collective Action",
+ facts:[["Venue","Grand Hyatt Manila, Grand Ballroom (Level 3)"],["Hours","8:00 AM – 5:00 PM"],["Your rooms","Rounds 3 and 4: confirm which rooms you attend"]],
+ it:[
+ ["8:00","AM","Registration"],
+ ["9:00","AM","Plenary 2: From Detection to Removal","Common ASEAN standards for industry responsibility and CSAM removal (Sessions 2, 2a, 2b) until 10:10.","The agenda lists nothing for 10:10–10:30.","","","","",[["ASEAN Guidelines for national legislation against online child sexual exploitation and abuse (2023)","https://acwc.asean.org/wp-content/uploads/2024/06/ASEAN-Guidelines-for-Harmonised-and-Comprehensive-National-Legislation-Against-All-Forms-of-Online-Child-Sexual-Exploitation-and-Abuse.pdf"]]],
+ ["10:30","AM","Coffee and tea break","Instructions for breakout rooms."],
+ ["10:50","AM","Breakout Round 3 (until 12:20)","Room 1 CSAEM removal, Room 2 ASEAN industry guidelines, Room 3 digital evidence, Room 4 child-centred reporting and referral.","Your assigned room: confirm."],
+ ["12:20","PM","Lunch"],
+ ["1:20","PM","Round 4 orientation and transition"],
+ ["1:40","PM","Breakout Round 4 (until 3:10)","Room 1 Extended RPA (invitation only), Room 2 financial intelligence, Room 3 age and access, Room 4 standardised OCSEA data.","Your assigned room: confirm."],
+ ["3:10","PM","Coffee and tea break","Return to plenary."],
+ ["3:30","PM","Final Plenary: Turning Commitments into Action","Listening report, live commitment wall, challenge to the room.","Think of the one commitment you want to see."],
+ ["4:30","PM","Closing Ceremony","Ends 5:00 PM. Say thank you to your team."]
+ ]},
+{id:"d6",tab:"6–9 Nov",h:"MaPa Workshop and Research Defense",s:"Friday 6 to Monday 9 November 2026",
+ facts:[["Sat 7 Nov","MaPa co-design workshop · VALACE Training Hall 5A & 5B, Valenzuela City · 8:00 AM – 5:00 PM"],["Mon 9 Nov","Research defense · time, venue and panel: confirm"],["Fri 6 Nov","Rest day"]],
+ it:[
+ ["Fri","6 Nov","Rest and recover"],
+ ["Fri","6 Nov","Write down your key learnings","And what you want to follow up on."],
+ ["7:30","AM","Arrive and settle in","Suggested. Confirm your call time and your role with MaPa or your DigiChamps lead.","Sat 7 Nov. Contact: Jennel C. Reyes, jreyes@ateneo.edu."],
+ ["8:00","AM","MaPa co-design workshop: Co-Designing OSAEC Prevention Resources","VALACE Training Hall 5A & 5B, Valenzuela City · 8:00 AM – 5:00 PM","Project Safenet by Masayang Pamilya Organization, Inc., with the Valenzuela City Council for the Protection of Children and Rotary Club of Makati. 30 youth leaders (15 students from five schools and 15 from Children Federation and One Valenzuela Youth) use a modified Photovoice approach to co-design one AVP and one infographic. Snacks and lunch are provided.","me","MaPa","","",[["MaPa Concept Note, Co-Design (file attached in chat)",""],["Wang & Burris (1997): Photovoice","https://doi.org/10.1177/109019819702400309"],["Catalani & Minkler (2010): Photovoice review","https://doi.org/10.1177/1090198109342084"]]],
+ ["Sat","7 Nov","Photovoice prompts to think about","What feeling safe online looks like; which situations feel safe or unsafe; who helps you stay safe; what you do when something strange happens; what you would change about phones, apps or home rules; what you wish adults understood.","Use symbolic or general visuals. No personal or identifiable content, and nobody has to share personal experiences of harm."],
+ ["Sun","8 Nov","Thank your team and mentor","YRSC team, session leads, adult mentor."],
+ ["Sun","8 Nov","Send feedback to CRC Asia","jtapil@crcasia.org"],
+ ["Sun","8 Nov","Rehearse your research defense","Say it out loud with a timer and list the questions you expect.","Rest after the workshop day too."],
+ ["Mon","9 Nov","RESEARCH DEFENSE","Time, venue and panel were not given. Confirm them.","Save a copy of the slides offline. I could not open the Canva link, so I have not checked the slides.","me","Defense","","",[["Defense slides (Canva)","https://canva.link/xtnyugkjaky9ulr"]]]
+ ]},
+{id:"read",tab:"Read",h:"Materials to Read",s:"The full list. Each item also appears under the session where you need it, in a Read for this box.",
+ facts:[["Priority","Canva slides, then your session plan"],["Your files","Open the attachments from this chat"]],
+ it:[
+ ["Read 1","","Growing Up Online: consolidated presentation (Canva)","Needed at: Sun 1 Nov, Tue 10:00 AM workshop, Wed 10:10 AM and 4:24 PM. Shortened findings of the three ASEAN studies on online child protection. Needed for the Prep Day Youth Spotlight Workshop.","Reflect: does it sound like what children said, what is missing, one thing to tell governments, tech companies, families and communities. I could not open this link myself, so I have not checked the slides.","me","Start here","","https://www.canva.com/design/DAHZaOZsLZg/bLI_19DYhtGPEIADng6xLg/edit"],
+ ["Read 2","","Session Plan: Behind the Feed (Word file)","Your running order, speakers and the guiding questions for your youth segment.","Also read the RPA links: Activities 5.1 (work with the private sector), 5.3 (safety-by-design commitments) and 5.6 (child participation in industry discussions).","me","Your session"],
+ ["Read 3","","YRSC Prep Day Program and Guide (PDF)","Prep Day schedule, what to bring, Code of Conduct and the Child Safeguarding Team contacts."],
+ ["Read 4","","Indicative Agenda: 2026 ASEAN ICT Forum (PDF)","Both Forum days, every session and breakout room description.","Pick the breakout rooms you want and confirm them with your team."],
+ ["Read 5","","Welcome Dinner invitation and QR code","Details are on the 3 Nov tab."],
+ ["Read 6","","MaPa Concept Note: Co-Designing OSAEC Prevention Resources (PDF)","Needed at: Sat 7 Nov. Methodology, sample prompts, participants and timeline. It also holds the assent and parent consent forms, in Filipino."],
+ ["Link","","ASEAN RPA on Child Online Exploitation and Abuse (2021–2025)","Needed at: Sun 1 Nov (your one-step answer) and Wed 10:25 AM launch. The original plan the Forum is extending. Skim the background and the seven priority areas.","The Forum launches the Extended RPA 2026–2030, so listen for what changed.","","","","https://asean.org/wp-content/uploads/2021/11/4.-ASEAN-RPA-on-COEA_Final.pdf"],
+ ["Link","","5Rights: building momentum for children’s rights online in Southeast Asia","Needed at: Sun 1 Nov and Wed 10:25 AM and 4:00 PM. Background on the renewed RPA and safety-by-design. Marie-Ève Nadeau, on your panel, is from 5Rights.","","","","","https://5rightsfoundation.com/from-indonesia-to-asean-building-momentum-for-childrens-rights-online-in-southeast-asia"],
+ ["Link","","Philippines: DOLE Labor Advisory No. 12, Series of 2026","Needed at: Sun 1 Nov and Wed 4:00 PM panel. News report on the guidelines for children under 15 in public entertainment, including online content. Atty. Jerommel Gabriel speaks on this.","A second article clarifies it updates existing policy rather than creating a new one.","","","","https://www.sunstar.com.ph/pampanga/local-news/dole-issues-guidelines-on-children-in-entertainment-under-15-years"],
+ ["Link","","Philippines: DOLE says work permits for child influencers are not a new policy","Clarification of the same advisory.","","","","","https://www.sunstar.com.ph/manila/dole-work-permits-for-child-influencers-not-a-new-policy"],
+ ["Link","","Malaysia: new influencer guidelines from the Content Forum","Needed at: Sun 1 Nov and Wed 4:00 PM panel. Mediha Mahmood’s organisation opened a public consultation on influencer and brand-collaboration guidelines covering AI content, child exploitation and fake claims.","","","","","https://www.thestar.com.my/news/nation/2026/09/02/new-guidelines-for-influencers-to-cover-ai-generated-content-child-exploitation-and-fake-claims-says-content-forum"],
+ ["Learn","","Know these terms","OSAEC: online sexual abuse and exploitation of children. CSAEM and CSAM: child sexual abuse (and exploitation) material. COEA: child online exploitation and abuse. RPA: Regional Plan of Action. YRSC: Youth Representatives to the Steering Committee. SL: session lead.","NVE: Nihilistic Violent Extremism."]
+ ]},
+{id:"help",tab:"Help",h:"Contacts and Safety",s:"You will never get in trouble for speaking up.",
+ facts:[["On site","A psychologist, a social worker and a nurse"],["Rule","Go out with your adult mentor, never alone"]],
+ it:[
+ ["Info","","Program questions: Janice Tapil, CRC Asia","jtapil@crcasia.org"],
+ ["Info","","Stay or travel: Jasmin Rabe, CRC Asia","jrabe@crcasia.org"],
+ ["Safe","","Child Safeguarding: Keenedy Celestial Cacao","ken.cacao@kindernothilfe.com"],
+ ["Safe","","Child Safeguarding: SD Gador","sd.gador@kindernothilfe.com"],
+ ["Safe","","Child Safeguarding: Florinor Algo (UNICEF)","falgo@unicef.org"],
+ ["Safe","","Child Safeguarding: Ramil Anton Villafranca (UNICEF)","rvillafranca@unicef.org"],
+ ["Safe","","Child Safeguarding: Mary Grace Z. Blando","mgzblando@doj.gov.ph"],
+ ["Tip","","Stay safe outside","Watch your bag and phone in crowds, use the room safety box, be careful crossing streets."]
+ ]}
+];
+var st={},cur="prep";
+try{st=JSON.parse(localStorage.getItem("lyra-forum-week-2026")||"{}")}catch(e){}
+function save(){try{localStorage.setItem("lyra-forum-week-2026",JSON.stringify(st))}catch(e){}}
+function esc(s){return String(s==null?"":s).replace(/&/g,"&amp;").replace(/</g,"&lt;")}
+function show(id){
+ cur=id;var d=D.filter(function(x){return x.id===id})[0];
+ document.getElementById("tabs").innerHTML=D.map(function(x){return '<button role="tab" aria-selected="'+(x.id===id)+'" data-id="'+x.id+'">'+esc(x.tab)+'</button>'}).join("");
+ var n=0,k=0,h='<h2>'+esc(d.h)+'</h2><p class="sub">'+esc(d.s)+'</p><div class="facts">'+d.facts.map(function(f){return '<div><b>'+esc(f[0])+'</b>'+esc(f[1])+'</div>'}).join("")+'</div>';
+ d.it.forEach(function(r,i){var key=id+i,dn=st[key];n++;if(dn)k++;
+  var me=r[5]==="me"||r[3]==="me",pill=r[6]||(r[5]==="me"?"":""),isq=r[7]==="qr";
+  var note=r[4]&&r[4]!=="me"?r[4]:"";
+  h+='<li class="it'+(dn?' done':'')+(me?' me':'')+'"><div class="t">'+esc(r[0])+'<br>'+esc(r[1])+'</div><div class="rail"><button class="dot" data-k="'+key+'" aria-label="Mark done: '+esc(r[2])+'"></button></div><div>'+(r[6]?'<span class="pill">'+esc(r[6])+'</span>':'')+'<h3>'+esc(r[2])+'</h3>'+(r[3]&&r[3]!=="me"?'<p class="ln">'+esc(r[3])+'</p>':'')+(note?'<div class="nt"><i>Notes:</i><span>'+esc(note)+'</span></div>':'')+(r[9]?'<div class="rd"><b>Read for this</b>'+r[9].map(function(m){return m[1]?'<a href="'+esc(m[1])+'" target="_blank" rel="noopener">'+esc(m[0])+'</a>':'<span>'+esc(m[0])+'</span>'}).join("")+'</div>':'')+(r[8]?'<p class="ln"><a href="'+esc(r[8])+'" target="_blank" rel="noopener">Open link</a></p>':'')+(isq?'<p class="ln">Open your QR code from your phone gallery or email.</p>':'')+'</div></li>';
+ });
+ var arrow=id==="d3"?'<div class="arrow">Day 1 of the Forum is tomorrow ↓</div>':'';
+ document.getElementById("app").innerHTML=h.replace('<li','<p class="prog">'+k+' of '+n+' done</p><ul class="tl"><li')+'</ul>'+arrow;
+}
+document.addEventListener("click",function(e){
+ var b=e.target.closest("button");if(!b)return;
+ if(b.dataset.id){show(b.dataset.id);window.scrollTo(0,0)}
+ else if(b.dataset.k){st[b.dataset.k]=!st[b.dataset.k];save();var y=window.scrollY;show(cur);window.scrollTo(0,y)}
+});
+show("check");
+</script>
+</body>
+</html>
